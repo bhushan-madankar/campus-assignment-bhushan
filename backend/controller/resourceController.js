@@ -21,6 +21,8 @@ const createResource = async (req, res) => {
             resourceType
         });
         await newResource.save();
+        // Log the added resource to the backend console
+        console.log('Resource added:', newResource);
         res.status(201).json(newResource);
     } catch (error) {
         res.status(500).json({ message: 'Error creating resource' });
